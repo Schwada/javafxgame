@@ -1,0 +1,44 @@
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import java.net.URL?>
+<GridPane fx:controller="com.schwada.mpgame.controller.LostController" xmlns:fx="http://javafx.com/fxml" prefHeight="500.0" prefWidth="1000.0">
+    <stylesheets><URL value="@style.css" /></stylesheets>
+
+    <columnConstraints>
+        <ColumnConstraints minWidth="100" prefWidth="100" maxWidth="Infinity" halignment="RIGHT">
+        </ColumnConstraints>
+        <ColumnConstraints minWidth="200" prefWidth="200" maxWidth="Infinity" hgrow="ALWAYS">
+        </ColumnConstraints>
+    </columnConstraints>
+
+    <!-- -->
+    <Label styleClass="header" text="You were eliminated" GridPane.columnIndex="1" GridPane.rowIndex="0" GridPane.rowSpan="1" />
+
+    <!-- -->
+    <Label styleClass="score-header" text="scores:" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.rowSpan="1" />
+    <VBox  styleClass="score-box" GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.columnSpan="2">
+        <HBox spacing="5">
+            <Label styleClass="score-place" text="1. "/>
+            <Label styleClass="score-user" fx:id="FirstUserNick" text="hrac1:"/>
+            <Label styleClass="score" fx:id="FirstUserScore" text="0"/>
+        </HBox>
+        <HBox spacing="5">
+            <Label styleClass="score-place" text="2. "/>
+            <Label styleClass="score-user" fx:id="SecondUserNick" text="2. hrac2:"/>
+            <Label styleClass="score" fx:id="SecondUserScore" text="0"/>
+        </HBox>
+        <HBox spacing="5">
+            <Label styleClass="score-place" text="3. "/>
+            <Label styleClass="score-user" fx:id="ThirdUserNick" text="hrac3:"/>
+            <Label styleClass="score" fx:id="ThirdUserScore" text="0"/>
+        </HBox>
+    </VBox>
+
+    <!-- -->
+    <HBox GridPane.columnIndex="1" GridPane.rowIndex="3" GridPane.columnSpan="2" spacing="10">
+        <Button fx:id="respawnButton" text="Respawn" styleClass="button, active" defaultButton="true" onAction="#handleRespawn"/>
+        <Button fx:id="quitButton" text="Quit" styleClass="button" onAction="#handleQuit"/>
+    </HBox>
+</GridPane>

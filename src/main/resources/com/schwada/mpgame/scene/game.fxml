@@ -1,0 +1,8 @@
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.canvas.Canvas?>
+
+<GridPane fx:controller="com.schwada.mpgame.controller.GameController"
+          xmlns:fx="http://javafx.com/fxml" alignment="center"
+          hgap="10" vgap="10" prefHeight="500.0" prefWidth="1000.0" fx:id="pane">
+    <Canvas fx:id="drawArea" height="${pane.height}" width="${pane.width}"/>
+</GridPane>

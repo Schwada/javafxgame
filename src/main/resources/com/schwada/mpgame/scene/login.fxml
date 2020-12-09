@@ -1,0 +1,53 @@
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import java.net.URL?>
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+<GridPane fx:controller="com.schwada.mpgame.controller.LoginController" xmlns:fx="http://javafx.com/fxml" prefHeight="500.0" prefWidth="1000.0">
+    <stylesheets><URL value="@style.css" /></stylesheets>
+
+    <columnConstraints>
+        <ColumnConstraints minWidth="100" prefWidth="100" maxWidth="Infinity" halignment="RIGHT">
+        </ColumnConstraints>
+        <ColumnConstraints minWidth="200" prefWidth="200" maxWidth="Infinity" hgrow="ALWAYS">
+        </ColumnConstraints>
+    </columnConstraints>
+
+
+    <Label styleClass="header" text="Game" GridPane.columnIndex="1" GridPane.rowIndex="0" GridPane.rowSpan="1" />
+
+    <!-- -->
+    <Label styleClass="inputlabel" text="Lan ip: " GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+    <TextField styleClass="input" fx:id="lanField" disable="true" promptText="127.0.0.1" text="127.0.0.1" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+    <!-- -->
+    <Label styleClass="inputlabel" text="Nickname: " GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+    <TextField styleClass="input" fx:id="nicknameField" promptText="mynickname" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+    <!-- -->
+    <Label styleClass="inputlabel" text="Color: " GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+    <ColorPicker styleClass="input" fx:id="colorField"  GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+    <!-- -->
+    <Label styleClass="inputlabel" text="Type : " GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+    <ChoiceBox styleClass="input" fx:id="typeField" GridPane.columnIndex="1" GridPane.rowIndex="4" value="Default">
+        <items>
+            <FXCollections fx:factory="observableArrayList">
+                <String fx:value="Default"/>
+                <String fx:value="Light" />
+                <String fx:value="Heavy" />
+            </FXCollections>
+        </items>
+    </ChoiceBox>
+    <!-- -->
+<!--    <Label styleClass="inputlabel" text="Password : " GridPane.columnIndex="0" GridPane.rowIndex="3"/>\-->
+<!--    <PasswordField styleClass="input" fx:id="passwordField" promptText="mypassword" GridPane.columnIndex="1" GridPane.rowIndex="3"/>-->
+
+    <!-- -->
+    <Label fx:id="errorText" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+
+    <!-- -->
+    <HBox GridPane.columnIndex="1" GridPane.rowIndex="6" GridPane.columnSpan="2" spacing="10">
+        <Button fx:id="loginButton" text="Login" styleClass="button, active" defaultButton="true" onAction="#handleLogin"/>
+        <!--<Button fx:id="registerButton" text="Register" styleClass="button" onAction="#handleRegister"/>-->
+    </HBox>
+</GridPane>
